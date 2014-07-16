@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-aop-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-asm-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-aspects-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-beans-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-context-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-context-support-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-core-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-expression-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-instrument-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-instrument-tomcat-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-jdbc-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-jms-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-orm-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-oxm-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-struts-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-test-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-tx-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-web-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-webmvc-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-webmvc-portlet-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
