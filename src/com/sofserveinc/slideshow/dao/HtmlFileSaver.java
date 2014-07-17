@@ -1,10 +1,10 @@
 package com.sofserveinc.slideshow.dao;
 
 /**
- * Html file saver.
+ * Html file saver interface.
  * 
  * @author Erik P. Yuntantyo
  */
-public final class HtmlFileSaver implements HtmlFileSavable {
+public interface HtmlFileSaver {
     
 }

@@ -1,10 +1,10 @@
 package com.sofserveinc.slideshow.dao;
 
 /**
- * Json file loader.
+ * Json file loader interface.
  * 
  * @author Erik P. Yuntantyo
  */
-public final class JsonFileLoader implements JsonFileLoadable {
+public interface JsonFileLoader {
     
 }

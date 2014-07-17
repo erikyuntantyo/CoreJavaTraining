@@ -1,4 +1,4 @@
 /**
  * @author Erik P. Yuntantyo
  */
-package com.qlicks.slideshow.model;
+package com.sofserveinc.slideshow;
