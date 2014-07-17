@@ -1,7 +1,9 @@
 package com.sofserveinc.slideshow.dao;
 
 /**
- * Json file loader interface.
+ * Json file loader.
+ * The user of this interface can save generated html slideshow
+ * into specified path.
  * 
  * @author Erik P. Yuntantyo
  */
