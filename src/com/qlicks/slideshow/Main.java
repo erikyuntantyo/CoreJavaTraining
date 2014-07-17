@@ -20,15 +20,24 @@ public abstract class Main {
      * @param args Application arguments.
      */
     public static void main(final String[] args) {
-        if (!args[0].contains(OUTPUT_FILE)) {
-            String sourceConfig = args[0];
+        if ((args == null) || (args.length == 0)) {
+            System.out.println("Please type json file name in the argument; "
+                               + "if multiple file, "
+                               + "separates with whitespace.");            
+            return;
+        }
+        
+        for (String arg : args) {
+            if (arg.contains(OUTPUT_FILE)) {
+                Logger
+                    .getLogger(Main.class)
+                    .warn("File \"" + arg + "\" should not be taken "
+                          + "from destination file.\n"
+                          + "The file would not be generated.");
+                continue;
+            }
             
-            Logger.getLogger(Main.class).debug(sourceConfig);
-        } else {
-            Logger
-                .getLogger(Main.class)
-                .warn("Configuration file should not be taken "
-                      + "from destination file.");
+            // TODO Load generator here.            
         }
     }
 }
