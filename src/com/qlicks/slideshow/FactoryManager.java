@@ -29,17 +29,31 @@ public final class FactoryManager {
     /**
      * Factory manager constructor.
      * 
-     * @param annotatedClasses The annotated classes that would be
+     * @param annotatedClasses Annotated classes that would be
      *                         registered to application context.
      */
     private FactoryManager(final Class<?>... annotatedClasses) {
         context = new AnnotationConfigApplicationContext(annotatedClasses);
     }
+
+    /**
+     * Get application context bean.
+     * 
+     * @param <T>  Dynamic type.
+     * 
+     * @param arg0 The bean name.
+     * @param arg1 The bean object.
+     * 
+     * @return the instance of bean.
+     */
+    public static <T> T getBean(final String arg0, final Class<T> arg1) {
+        return instance.context.getBean(arg0, arg1);
+    }
     
     /**
      * Initialize factory manager.
      * 
-     * @return The factory manager.
+     * @return the factory manager.
      */
     public static FactoryManager initialize() {
         instance = new FactoryManager();
@@ -49,7 +63,7 @@ public final class FactoryManager {
     /**
      * Initialize factory manager.
      * 
-     * @param annotatedClasses The annotated classes that would be
+     * @param annotatedClasses Annotated classes that would be
      *                         registered to application context.
      */
     public static void initialize(final Class<?>... annotatedClasses) {
@@ -57,21 +71,12 @@ public final class FactoryManager {
     }
     
     /**
-     * Application context.
-     * 
-     * @return The application context.
-     */
-    public static ApplicationContext context() {
-        return instance.context;
-    }
-    
-    /**
      * Register object.
      * 
-     * @param annotatedClasses The annotated classes that would be
+     * @param annotatedClasses Annotated classes that would be
      *                         registered to application context.
      *                         
-     * @return The factory manager.
+     * @return the factory manager.
      */
     public FactoryManager register(final Class<?>... annotatedClasses) {
         ((AnnotationConfigApplicationContext)context).register(annotatedClasses);
