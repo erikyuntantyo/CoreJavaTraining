@@ -1,7 +1,7 @@
-package com.sofserveinc.slideshow.service;
+package com.qlicks.slideshow.service;
 
-import com.sofserveinc.slideshow.dao.JsonFileLoader;
-import com.sofserveinc.slideshow.model.Slideshow;
+import com.qlicks.slideshow.dao.JsonFileLoader;
+import com.qlicks.slideshow.model.Slideshow;
 
 /**
  * Json file loader service handler.

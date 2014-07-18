@@ -3,14 +3,6 @@ package com.qlicks.slideshow;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.sofserveinc.slideshow.SlideshowGenerator;
-import com.sofserveinc.slideshow.contract.SlideGeneration;
-import com.sofserveinc.slideshow.dao.HtmlFileSaver;
-import com.sofserveinc.slideshow.dao.JsonFileLoader;
-import com.sofserveinc.slideshow.service.HtmlFileSaverService;
-import com.sofserveinc.slideshow.service.JsonFileLoaderService;
-import com.sofserveinc.slideshow.service.SlideGenerationService;
-
 /**
  * The main class of the project.
  * 

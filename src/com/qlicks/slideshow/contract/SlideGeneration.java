@@ -1,6 +1,6 @@
-package com.sofserveinc.slideshow.contract;
+package com.qlicks.slideshow.contract;
 
-import com.sofserveinc.slideshow.model.Slideshow;
+import com.qlicks.slideshow.model.Slideshow;
 
 /**
  * Slideshow generation.

@@ -1,4 +1,4 @@
-package com.sofserveinc.slideshow.dao;
+package com.qlicks.slideshow.dao;
 
 /**
  * Html file saver.

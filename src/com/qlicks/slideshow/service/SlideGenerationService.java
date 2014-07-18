@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.sofserveinc.slideshow.service;
+package com.qlicks.slideshow.service;
 
-import com.sofserveinc.slideshow.contract.SlideGeneration;
-import com.sofserveinc.slideshow.model.Slideshow;
+import com.qlicks.slideshow.contract.SlideGeneration;
+import com.qlicks.slideshow.model.Slideshow;
 
 /**
  * The service of slide generation.

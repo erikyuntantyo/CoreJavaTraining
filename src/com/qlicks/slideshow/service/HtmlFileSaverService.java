@@ -1,6 +1,6 @@
-package com.sofserveinc.slideshow.service;
+package com.qlicks.slideshow.service;
 
-import com.sofserveinc.slideshow.dao.HtmlFileSaver;
+import com.qlicks.slideshow.dao.HtmlFileSaver;
 
 /**
  * Html file saver service handler.

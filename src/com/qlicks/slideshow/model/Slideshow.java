@@ -1,4 +1,4 @@
-package com.sofserveinc.slideshow.model;
+package com.qlicks.slideshow.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;

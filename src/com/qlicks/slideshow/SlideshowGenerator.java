@@ -1,4 +1,4 @@
-package com.sofserveinc.slideshow;
+package com.qlicks.slideshow;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Bean;
