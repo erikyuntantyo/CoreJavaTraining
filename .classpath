@@ -8,7 +8,6 @@
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/ezmorph-1.0.6.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-aop-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-asm-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-aspects-3.1.1.RELEASE.jar"/>
@@ -29,5 +28,6 @@
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-web-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-webmvc-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/spring-webmvc-portlet-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/workspace/CoreJavaTraining/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

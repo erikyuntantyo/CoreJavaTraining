@@ -1,6 +1,9 @@
 package com.qlicks.slideshow;
 
 import org.apache.log4j.Logger;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.sofserveinc.slideshow.SlideshowGenerator;
 
 /**
  * The main class of the project.
@@ -11,8 +14,7 @@ public abstract class Main {
     /**
      * Destination context configuration file.
      */
-    private static final String OUTPUT_FILE =
-        "C:/nginx/html/html-slideshow/example/";
+    private static final String HTML_PATH = "../slideshow/generated/";
     
     /**
      * Main method.
@@ -20,15 +22,17 @@ public abstract class Main {
      * @param args Application arguments.
      */
     public static void main(final String[] args) {
+        Thread worker;
+        
         if ((args == null) || (args.length == 0)) {
             System.out.println("Please type json file name in the argument; "
                                + "if multiple file, "
-                               + "separates with whitespace.");            
+                               + "separates by whitespace.");            
             return;
         }
         
-        for (String arg : args) {
-            if (arg.contains(OUTPUT_FILE)) {
+        for (final String arg : args) {
+            if (arg.contains(HTML_PATH)) {
                 Logger
                     .getLogger(Main.class)
                     .warn("File \"" + arg + "\" should not be taken "
@@ -37,7 +41,17 @@ public abstract class Main {
                 continue;
             }
             
-            // TODO Load generator here.            
+            worker = new Thread(new Runnable() {
+                private AnnotationConfigApplicationContext context;
+                
+                @Override
+                public void run() {
+                    context = new AnnotationConfigApplicationContext(SlideshowGenerator.class);
+                    context.getBean("generate", arg, HTML_PATH);
+                }
+            });
+            worker.setDaemon(true);
+            worker.start();
         }
     }
 }

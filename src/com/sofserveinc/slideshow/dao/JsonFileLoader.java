@@ -1,5 +1,7 @@
 package com.sofserveinc.slideshow.dao;
 
+import com.sofserveinc.slideshow.model.Slideshow;
+
 /**
  * Json file loader.
  * The user of this interface can save generated html slideshow
@@ -9,10 +11,10 @@ package com.sofserveinc.slideshow.dao;
  */
 public interface JsonFileLoader {
     /**
-     * Saves slideshow html.
+     * Load json file.
      * 
-     * @param slideshowHtml Slideshow html content.
-     * @param htmlPath      Html file path.          
+     * @param jsonPath Json file path.
+     * @return the slideshow model.
      */
-    void save(final String slideshowHtml, final String htmlPath);
+    Slideshow load(String jsonPath);
 }

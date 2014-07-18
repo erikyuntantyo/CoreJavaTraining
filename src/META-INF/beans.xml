@@ -8,6 +8,7 @@
 						   http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 						   http://www.springframework.org/schema/context
 						   http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+    <context:annotation-config />
     <context:component-scan base-package="com.qlicks.slideshow" />
     <context:component-scan base-package="com.sofserveinc.slideshow.dao" />
 </beans>
