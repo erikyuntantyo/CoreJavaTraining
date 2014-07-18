@@ -3,6 +3,9 @@ package com.qlicks.slideshow;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.qlicks.slideshow.dao.JsonFileLoader;
+import com.qlicks.slideshow.service.JsonFileLoaderService;
+
 /**
  * The main class of the project.
  * 
@@ -10,9 +13,14 @@ import org.apache.log4j.PropertyConfigurator;
  */
 public abstract class Main {
     /**
-     * Destination context configuration file.
+     * Html file path.
      */
     private static final String HTML_PATH = "../slideshow/generated/";
+    
+    /**
+     * Json file path.
+     */
+    private static final String JSON_PATH = "slidedata/";
     
     /**
      * Main method.
@@ -29,13 +37,7 @@ public abstract class Main {
             return;
         }
 
-        FactoryManager
-            .initialize()
-            .register(SlideshowGenerator.class)
-            /*.register(HtmlFileSaver.class, HtmlFileSaverService.class)
-            .register(JsonFileLoader.class, JsonFileLoaderService.class)
-            .register(SlideGeneration.class, SlideGenerationService.class)*/
-            .refresh();
+        FactoryManager.initialize(SlideshowGenerator.class);
         
         for (final String arg : args) {
             if (arg.contains(HTML_PATH)) {
@@ -47,9 +49,10 @@ public abstract class Main {
                 continue;
             }
             
-            FactoryManager.context()
-                          .getBean("generator", SlideshowGenerator.class)
-                          .generate(arg, HTML_PATH);
+            FactoryManager.getBean("generator", SlideshowGenerator.class)
+                          .generate(JSON_PATH + arg, HTML_PATH);
         }
+        
+        FactoryManager.close();
     }
 }
