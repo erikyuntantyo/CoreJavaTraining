@@ -2,9 +2,14 @@ package com.qlicks.slideshow;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.sofserveinc.slideshow.SlideshowGenerator;
+import com.sofserveinc.slideshow.contract.SlideGeneration;
+import com.sofserveinc.slideshow.dao.HtmlFileSaver;
+import com.sofserveinc.slideshow.dao.JsonFileLoader;
+import com.sofserveinc.slideshow.service.HtmlFileSaverService;
+import com.sofserveinc.slideshow.service.JsonFileLoaderService;
+import com.sofserveinc.slideshow.service.SlideGenerationService;
 
 /**
  * The main class of the project.
@@ -23,16 +28,22 @@ public abstract class Main {
      * @param args Application arguments.
      */
     public static void main(final String[] args) {
-        Thread worker;
-        
         PropertyConfigurator.configure("log4j.properties");
-        
+
         if ((args == null) || (args.length == 0)) {
             System.out.println("Please type json file name in the argument; "
                                + "if multiple file, "
                                + "separates by whitespace.");            
             return;
         }
+
+        FactoryManager
+            .initialize()
+            .register(SlideshowGenerator.class)
+            /*.register(HtmlFileSaver.class, HtmlFileSaverService.class)
+            .register(JsonFileLoader.class, JsonFileLoaderService.class)
+            .register(SlideGeneration.class, SlideGenerationService.class)*/
+            .refresh();
         
         for (final String arg : args) {
             if (arg.contains(HTML_PATH)) {
@@ -44,19 +55,9 @@ public abstract class Main {
                 continue;
             }
             
-            worker = new Thread(new Runnable() {
-                private AnnotationConfigApplicationContext context;
-                
-                @Override
-                public void run() {
-                    Logger.getLogger(Main.class).debug("Begin generates slideshow...");
-                    
-                    context = new AnnotationConfigApplicationContext(SlideshowGenerator.class);
-                    context.getBean("generate", arg, HTML_PATH);
-                }
-            });
-            worker.setDaemon(true);
-            worker.start();
+            FactoryManager.context()
+                          .getBean("generator", SlideshowGenerator.class)
+                          .generate(arg, HTML_PATH);
         }
     }
 }
