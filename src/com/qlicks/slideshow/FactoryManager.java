@@ -37,6 +37,13 @@ public final class FactoryManager {
     }
 
     /**
+     * Close factory manager.
+     */
+    public static void close() {
+        ((AnnotationConfigApplicationContext)instance.context).close();
+    }
+    
+    /**
      * Get application context bean.
      * 
      * @param <T>  Dynamic type.
