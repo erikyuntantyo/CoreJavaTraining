@@ -1,6 +1,7 @@
 package com.qlicks.slideshow;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.sofserveinc.slideshow.SlideshowGenerator;
@@ -24,6 +25,8 @@ public abstract class Main {
     public static void main(final String[] args) {
         Thread worker;
         
+        PropertyConfigurator.configure("log4j.properties");
+        
         if ((args == null) || (args.length == 0)) {
             System.out.println("Please type json file name in the argument; "
                                + "if multiple file, "
@@ -46,6 +49,8 @@ public abstract class Main {
                 
                 @Override
                 public void run() {
+                    Logger.getLogger(Main.class).debug("Begin generates slideshow...");
+                    
                     context = new AnnotationConfigApplicationContext(SlideshowGenerator.class);
                     context.getBean("generate", arg, HTML_PATH);
                 }
