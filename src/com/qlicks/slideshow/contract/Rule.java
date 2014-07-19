@@ -19,5 +19,5 @@ public interface Rule {
      * @param content the content to generate.
      * @return the generated content.
      */
-    String generate(final String content);
+    String generate(final Object content);
 }
