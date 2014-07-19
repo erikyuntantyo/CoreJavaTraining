@@ -3,9 +3,6 @@ package com.qlicks.slideshow;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.qlicks.slideshow.dao.JsonFileLoader;
-import com.qlicks.slideshow.service.JsonFileLoaderService;
-
 /**
  * The main class of the project.
  * 
