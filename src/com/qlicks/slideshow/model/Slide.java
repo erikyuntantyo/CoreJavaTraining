@@ -22,36 +22,22 @@ public final class Slide {
     private Object content;
     
     /**
-     * Slide type.
+     * Slide content type.
      */
     private String type;
     
     /**
-     * Slide format.
+     * Slide content format.
      */
     private String format;
     
     /**
-     * Module constructor.
-     * 
-     * @param title    Slide title.
-     * @param subtitle Slide subtitle.
-     * @param content  Slide content.
-     * @param type     Slide type.
-     * @param format   Slide data format.
+     * Slide constructor.
      */
-    public Slide(final String title,
-                 final String subtitle,
-                 final Object content,
-                 final String type,
-                 final String format) {
-        this.title = title;
-        this.subtitle = subtitle;
-        this.content = content;
-        this.type = type;
-        this.format = format;
+    public Slide() {
+        
     }
-    
+
     /**
      * Gets slide title.
      * 
@@ -60,7 +46,16 @@ public final class Slide {
     public String getTitle() {
         return title;
     }
-    
+
+    /**
+     * Sets slide title.
+     * 
+     * @param title the slide title to set.
+     */
+    public void setTitle(final String title) {
+        this.title = title;
+    }
+
     /**
      * Gets slide subtitle.
      * 
@@ -69,7 +64,16 @@ public final class Slide {
     public String getSubtitle() {
         return subtitle;
     }
-    
+
+    /**
+     * Sets slide subtitle.
+     * 
+     * @param subtitle the slide subtitle to set.
+     */
+    public void setSubtitle(final String subtitle) {
+        this.subtitle = subtitle;
+    }
+
     /**
      * Gets slide content.
      * 
@@ -78,22 +82,49 @@ public final class Slide {
     public Object getContent() {
         return content;
     }
-    
+
     /**
-     * Gets slide type.
+     * Sets slide content.
+     * 
+     * @param content the slide content to set.
+     */
+    public void setContent(final Object content) {
+        this.content = content;
+    }
+
+    /**
+     * Gets slide content type.
      * 
      * @return the slide type.
      */
     public String getType() {
         return type;
     }
-    
+
     /**
-     * Gets slide format.
+     * Sets slide content type.
      * 
-     * @return the slide format.
+     * @param type the slide type to set.
+     */
+    public void setType(final String type) {
+        this.type = type;
+    }
+
+    /**
+     * Gets slide content format.
+     * 
+     * @return the slide content format.
      */
     public String getFormat() {
         return format;
+    }
+
+    /**
+     * Sets slide content format.
+     * 
+     * @param format the slide content format to set.
+     */
+    public void setFormat(final String format) {
+        this.format = format;
     }
 }
