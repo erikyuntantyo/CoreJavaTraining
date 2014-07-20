@@ -1,5 +1,7 @@
 package com.qlicks.slideshow.dao;
 
+import java.io.IOException;
+
 import com.qlicks.slideshow.model.Slideshow;
 
 /**
@@ -14,7 +16,10 @@ public interface JsonFileLoader {
      * Load json file.
      * 
      * @param jsonPath Json file path.
+     * 
      * @return the slideshow model.
+     * 
+     * @throws IOException 
      */
-    Slideshow load(String jsonPath);
+    Slideshow load(String jsonPath) throws IOException;
 }
