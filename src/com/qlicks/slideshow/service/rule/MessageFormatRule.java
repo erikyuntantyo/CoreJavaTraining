@@ -10,6 +10,10 @@ import java.text.MessageFormat;
 public final class MessageFormatRule extends RuleBase {
     @Override
     public String generate(final Object content, final String format) {
-        return new MessageFormat(format).format(content);
+        if (content instanceof Object[]) {
+            return new MessageFormat(format).format(content);
+        }
+        
+        return null;
     }
 }
