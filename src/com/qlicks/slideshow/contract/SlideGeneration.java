@@ -1,5 +1,7 @@
 package com.qlicks.slideshow.contract;
 
+import java.io.IOException;
+
 import com.qlicks.slideshow.model.Slideshow;
 
 /**
@@ -14,7 +16,10 @@ public interface SlideGeneration {
      * Generate slideshow content (html).
      * 
      * @param slideshow Slideshow model.
+     * 
      * @return the generated html string.
+     * 
+     * @throws IOException 
      */
-    String generate(final Slideshow slideshow);
+    String generate(final Slideshow slideshow) throws IOException;
 }
