@@ -1,18 +1,11 @@
 package com.qlicks.slideshow.service.rule;
 
-import com.qlicks.slideshow.contract.Rule;
-
 /**
- * The rule of raw type.
+ * The rule of message format type.
  * 
  * @author Erik P. Yuntantyo
  */
-public final class Raw implements Rule {
-    @Override
-    public String getFormat() {
-        return null;
-    }
-
+public final class MessageFormatRule extends RuleBase {
     @Override
     public String generate(final Object content) {
         return content.toString();

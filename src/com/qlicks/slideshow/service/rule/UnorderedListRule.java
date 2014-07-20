@@ -1,20 +1,13 @@
 package com.qlicks.slideshow.service.rule;
 
-import com.qlicks.slideshow.contract.Rule;
-
 /**
  * The rule of unordered list type.
  * 
  * @author Erik P. Yuntantyo
  */
-public final class UnorderedList implements Rule {
+public final class UnorderedListRule extends RuleBase {
     @Override
-    public String getFormat() {
-        return "<ul>\n%s</ul>";
-    }
-
-    @Override
-    public String generate(final Object content) {
+    public String generate(final Object content, final String format) {
         if (content instanceof Object[]) {
             String li = "<li>%s</li>";
             String rest = "";
@@ -24,7 +17,7 @@ public final class UnorderedList implements Rule {
             }
             
             if (!rest.isEmpty()) {
-                rest = String.format(getFormat(), rest);
+                rest = String.format("<ul>%s</ul>", rest);
             }
             
             return rest;
