@@ -1,0 +1,10 @@
+{ 
+    "slides": [
+        {
+            "title": "This is Single Slideshow Title",
+            "subtitle": "As you know, it's for a test purpose only.",
+            "type": "paragraph",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{ 
+    "slides": [
+        {
+            "title": "This is the First Page of Multiple Slideshow Title",
+            "subtitle": "As you know, it's for a test purpose only.",
+            "type": "list",
+            "content": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "Aenean vitae erat fermentum, dictum lorem ut, pharetra tortor.",
+                "Donec viverra vestibulum consectetur."
+            ]
+        },
+        {
+            "title": "This is the Second Page of Multiple Slideshow Title",
+            "subtitle": "Of course, it's for a test purpose only in the second page.",
+            "type": "raw",
+            "content": "<div>Wow, it wrapped by DIV.</div>"
+        },
+        {
+            "title": "This is the Third Page of Multiple Slideshow Title",
+            "subtitle": "Here for test date format.",
+            "type": "dateformat",
+            "format": "FULL",
+            "content": "now"
+        }
+    ]
+}
