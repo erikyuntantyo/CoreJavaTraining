@@ -1,5 +1,7 @@
 package com.qlicks.slideshow.service.rule;
 
+import java.util.Arrays;
+
 /**
  * The rule of sort type.
  * 
@@ -8,6 +10,11 @@ package com.qlicks.slideshow.service.rule;
 public final class SortRule extends RuleBase {
     @Override
     public String generate(final Object content, final String format) {
-        return content.toString();
+        if (content instanceof Object[]) {
+            Arrays.sort((int[])content);
+            return Arrays.toString((int[])content);
+        }
+        
+        return null;
     }
 }
