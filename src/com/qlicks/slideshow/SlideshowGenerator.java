@@ -25,7 +25,7 @@ import com.qlicks.slideshow.service.rule.ParagraphRule;
 import com.qlicks.slideshow.service.rule.RawRule;
 import com.qlicks.slideshow.service.rule.RemoveRepeatRule;
 import com.qlicks.slideshow.service.rule.SortRule;
-import com.qlicks.slideshow.service.rule.UnorderedListRule;
+import com.qlicks.slideshow.service.rule.ListRule;
 
 /**
  * Slideshow generator.
@@ -185,7 +185,7 @@ public class SlideshowGenerator {
     @Bean
     @Scope("prototype")
     public Rule unordererListRule() {
-        return new UnorderedListRule();
+        return new ListRule();
     }
     
     /**
