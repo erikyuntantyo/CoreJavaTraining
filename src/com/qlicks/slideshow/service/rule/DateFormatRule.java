@@ -6,6 +6,7 @@ import java.util.Date;
 
 import org.apache.log4j.Logger;
 
+import com.qlicks.slideshow.contract.Rule;
 import com.qlicks.slideshow.contract.SlideGeneration;
 
 /**
@@ -13,7 +14,7 @@ import com.qlicks.slideshow.contract.SlideGeneration;
  * 
  * @author Erik P. Yuntantyo
  */
-public final class DateFormatRule extends RuleBase {
+public class DateFormatRule implements Rule {
     @Override
     public String generate(final Object content, final String format) {
         try {

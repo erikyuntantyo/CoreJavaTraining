@@ -1,11 +1,13 @@
 package com.qlicks.slideshow.service.rule;
 
+import com.qlicks.slideshow.contract.Rule;
+
 /**
- * The rule of unordered list type.
+ * The rule of list type.
  * 
  * @author Erik P. Yuntantyo
  */
-public final class UnorderedListRule extends RuleBase {
+public class ListRule implements Rule {
     @Override
     public String generate(final Object content, final String format) {
         if (content instanceof Object[]) {

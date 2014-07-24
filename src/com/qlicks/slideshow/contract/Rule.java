@@ -7,21 +7,12 @@ package com.qlicks.slideshow.contract;
  */
 public interface Rule {
     /**
-     * Generates content by rule.
+     * Generate content by slide rule.
      * 
-     * @param content the content to generate.
+     * @param content the slide content.
+     * @param format  the slide content format.
      * 
-     * @return the generated content.
-     */
-    String generate(final Object content);
-    
-    /**
-     * Generates content by rule.
-     * 
-     * @param content the content to generate.
-     * @param format  the content format.
-     * 
-     * @return the generated content.
+     * @return the generated html slide.
      */
     String generate(final Object content, final String format);
 }
