@@ -6,11 +6,11 @@ When application executed, it would find available template and slide data file 
 
 The usage of the application do as the following:
 ```
-java -jar CoreJavaTraining.jar [JSON_FILE_NAME]
+java -jar CoreJavaTraining.jar services.xml [JSON_FILE_NAME] [OUTPUT_PATH]
 ```
 Separates by whitespace to generate multiple slide data in paralel as the following:
 ```
-java -jar CoreJavaTraining.jar [JSON_FILE_NAME_1] [JSON_FILE_NAME_2] [JSON_FILE_NAME_N]
+java -jar CoreJavaTraining.jar services.xml [JSON_FILE_NAME_1] [JSON_FILE_NAME_2] [JSON_FILE_NAME_N] [OUTPUT_PATH]
 ```
 
 ### Result
