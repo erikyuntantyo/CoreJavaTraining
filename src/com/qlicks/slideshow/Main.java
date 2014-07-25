@@ -96,7 +96,8 @@ public abstract class Main {
                         worker.join();
                     }
                 } catch (InterruptedException exc) {
-                    
+                    LogFactory.getLog(Main.class)
+                              .error("Error while thread working.", exc);
                 }
             }
         }).start();
