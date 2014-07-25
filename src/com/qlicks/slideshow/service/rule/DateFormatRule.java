@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.Logger;
 
 import com.qlicks.slideshow.contract.Rule;
@@ -27,8 +28,8 @@ public class DateFormatRule implements Rule {
                 return new SimpleDateFormat(format).format(date);
             }
         } catch (ParseException exc) {
-            Logger.getLogger(SlideGeneration.class)
-                  .error("Error caught while parsing date.", exc);
+            LogFactory.getLog(SlideGeneration.class)
+                      .error("Error caught while parsing date.", exc);
         }
         
         return "Unknown date format.";

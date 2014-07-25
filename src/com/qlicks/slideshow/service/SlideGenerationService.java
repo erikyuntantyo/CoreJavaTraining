@@ -8,8 +8,6 @@ import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.qlicks.slideshow.FactoryManager;
-import com.qlicks.slideshow.contract.Rule;
 import com.qlicks.slideshow.contract.SlideGeneration;
 import com.qlicks.slideshow.model.Slide;
 import com.qlicks.slideshow.model.Slideshow;
