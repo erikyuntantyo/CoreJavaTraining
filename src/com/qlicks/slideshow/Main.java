@@ -1,8 +1,10 @@
 package com.qlicks.slideshow;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,6 +15,21 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author Erik P. Yuntantyo
  */
 public abstract class Main {
+    /**
+     * Spring application context.
+     */
+    private static ApplicationContext context;
+    
+    /**
+     * Json data file names.
+     */
+    private static String[] jsonDataFiles;
+    
+    /**
+     * Output path of html slideshow.
+     */
+    private static String outputPath;
+    
     /**
      * Main method.
      * 
@@ -35,32 +52,53 @@ public abstract class Main {
             System.out.println(info);            
             return;
         }
-
-        final Object obj = new Object();
-        final String destinationPath = args[args.length - 1];
         
         File contextFile = new File(args[0]);
-        String[] jsonDataFiles = new String[args.length - 2];
+        
+        jsonDataFiles = new String[args.length - 2];        
+        outputPath = args[args.length - 1];
         
         System.arraycopy(args, 1, jsonDataFiles, 0, jsonDataFiles.length);
         
         if (!contextFile.getName().endsWith(".xml") || !contextFile.exists()
-            || !new File(destinationPath).isDirectory()) {
+            || !new File(outputPath).isDirectory()) {
             System.out.println(info);
             return;
         }
         
-        final ApplicationContext context =
-            new ClassPathXmlApplicationContext("file:" + contextFile.getAbsolutePath());
+        context = new ClassPathXmlApplicationContext("file:" + contextFile.getAbsolutePath());
         
-        for (final String jsonDataFile : jsonDataFiles) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    context.getBean("generator", SlideshowGenerator.class)
-                           .generate(jsonDataFile, destinationPath);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    List<Thread> workers = new ArrayList<>();
+                    
+                    for (final String jsonDataFile : jsonDataFiles) {
+                        Thread worker = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                context.getBean("generator", SlideshowGenerator.class)
+                                       .generate(jsonDataFile, outputPath);
+                                LogFactory.getLog(Main.class).info(Thread.currentThread().getName() + " exits...");
+                            }
+                        });
+                        worker.setDaemon(true);
+                        worker.setName(jsonDataFile + "-worker");
+                        worker.start();
+                        
+                        LogFactory.getLog(Main.class).info(worker.getName() + " starts...");
+                        
+                        workers.add(worker);
+                    }
+                    
+                    for (Thread worker : workers) {
+                        worker.join();
+                    }
+                } catch (InterruptedException exc) {
+                    
                 }
-            }).start();
-        }
+            }
+        }).start();
     }
 }
