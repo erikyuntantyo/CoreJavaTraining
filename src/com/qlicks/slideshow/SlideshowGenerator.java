@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.logging.LogFactory;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-
 import com.qlicks.slideshow.contract.SlideGeneration;
 import com.qlicks.slideshow.dao.HtmlFileSaver;
 import com.qlicks.slideshow.dao.JsonFileLoader;
